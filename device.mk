@@ -77,6 +77,63 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.default_network=9 \
 	telephony.lteOnGsmDevice=1
 
+PRODUCT_PROPERTY_OVERRIDES += \
+	pm.sleep.mode=1 \
+	persist.sys.language=en-US \
+	persist.sys.country=US \
+	camera2.portability.force_api=1 \
+
+# Enable AAC 5.1 output
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.aac_51_output_enabled=true
+
+# Do not power down SIM card when modem is sent to Low Power Mode.
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.radio.apm_sim_not_pwdn=1
+
+# RIL
+	PRODUCT_PROPERTY_OVERRIDES += \
+	ro.telephony.ril_class=LgeLteRIL \
+	ro.telephony.ril.config=qcomdsds \
+	rild.libpath=/system/lib/libril-qc-qmi-1.so \
+	ro.telephony.call_ring.multiple=0
+	
+# Wifi Configs
+PRODUCT_PROPERTY_OVERRIDES += \
+	wifi.interface=wlan0 \
+	wifi.supplicant_scan_interval=15 \
+	ro.wifi.channels=13[SPACE]13
+
+# Up to 3 layers can go through overlays
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.hwc.mdpcomp.enable=true
+
+# More overrides from stock build.prop
+PRODUCT_PROPERTY_OVERRIDES += \
+	debug.sf.hw=1 \
+	debug.egl.hw=1 \
+	debug.composition.type=gpu \
+	video.accelerate.hw=1 \
+	wlan.chip.vendor=brcm \
+	wlan.chip.version=bcm4334 \
+	af.resampler.quality=255
+	
+# Better internet browsing & download speed
+PRODUCT_PROPERTY_OVERRIDES += \
+	net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960 \
+	net.tcp.buffersize.wifi=4096,87380,256960,4096,16384,256960 \
+	net.tcp.buffersize.umts=4096,87380,256960,4096,16384,256960 \
+	net.tcp.buffersize.gprs=4096,87380,256960,4096,16384,256960 \
+	net.tcp.buffersize.edge=4096,87380,256960,4096,16384,256960 \
+	net.tcp.buffersize.hspa=6144,87380,524288,6144,16384,262144 \
+	net.tcp.buffersize.lte=524288,1048576,2097152,524288,1048576,2097152 \
+	net.tcp.buffersize.hsdpa=6144,87380,1048576,6144,87380,1048576 \
+	net.tcp.buffersize.evdo_b=6144,87380,1048576,6144,87380,1048576
+	
+# Random overrides
+PRODUCT_PROPERTY_OVERRIDES += \
+	debug.performance.tuning=1
+
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
