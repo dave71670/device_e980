@@ -72,6 +72,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+# sTART SOME TWEAKS FROM NERDY DEVICE 	
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.default_network=9 \
