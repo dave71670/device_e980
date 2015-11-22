@@ -13,9 +13,9 @@
  },
  {
    "remote": "gh",
-   "repository": "EmmanuelU/wild_kernel_lge_gproj",
+   "repository": "ShadySquirrel/e980-zeKernel",
    "target_path": "kernel/lge/gproj",
-   "revision": "android-msm-e98x-3.4"
+   "revision": "lp-dev-gfx"
  },
  {
    "remote": "tm",
