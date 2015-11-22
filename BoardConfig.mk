@@ -58,3 +58,14 @@ COMMON_GLOBAL_CFLAGS += -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' -DBOA
 
 BOARD_SEPOLICY_DIRS += \
         device/lge/e980/sepolicy
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifeq ($(WITH_DEXPREOPT),)
+    WITH_DEXPREOPT := true
+  endif
+endif
+#Toolchain configs
+#TARGET_TC_ROM := 4.9-sm
+#TARGET_TC_KERNEL := 4.9-sm
+#TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
+#TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
