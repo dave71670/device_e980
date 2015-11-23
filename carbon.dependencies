@@ -18,6 +18,12 @@
    "revision": "lp-dev-gfx"
  },
  {
+  "remote": "gh",
+  "repository": "infected-lp/sm_arm-linux-androideabi-4.9.x",
+  "target_path": "prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9-sm",
+  "revision": "master"
+ },
+ {
    "remote": "tm",
    "repository": "proprietary_vendor_lge",
    "target_path": "vendor/lge",
