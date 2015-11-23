@@ -13,7 +13,7 @@
  },
  {
    "remote": "gh",
-   "repository": "ShadySquirrel/e980-zeKernel",
+   "repository": "ShadySquirrel/e980-zeKrnl",
    "target_path": "kernel/lge/gproj",
    "revision": "lp-dev-gfx"
  },
