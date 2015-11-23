@@ -82,7 +82,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	pm.sleep.mode=1 \
 	persist.sys.language=en-US \
 	persist.sys.country=US \
-	camera2.portability.force_api=1 \
 
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
