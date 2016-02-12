@@ -15,7 +15,7 @@
    "remote": "gh",
    "repository": "ShadySquirrel/e980-zeKrnl",
    "target_path": "kernel/lge/gproj",
-   "revision": "lp-dev-gfx"
+   "revision": "lp-dev-v17"
  },
  {
    "remote": "tm",
