@@ -26,7 +26,7 @@
 
 #define LOG_TAG "CameraWrapper"
 #include <cutils/log.h>
-
+#include <string.h>
 #include <utils/threads.h>
 #include <utils/String8.h>
 #include <utils/Errors.h>

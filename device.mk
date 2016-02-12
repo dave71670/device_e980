@@ -61,6 +61,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
 	hwaddrs
 
+# TODO(danalbert): Remove this once stlport is dead and gone.
+PRODUCT_PACKAGES +=  libstlport
+
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.bt.bdaddr_path=/data/misc/bdaddr
 
@@ -76,6 +79,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.default_network=9 \
 	telephony.lteOnGsmDevice=1
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	dalvik.vm.dex2oat-filter=speed \
+	dalvik.vm.dex2oat-swap=false
 
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
