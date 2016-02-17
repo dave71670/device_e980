@@ -1,21 +1,9 @@
 [
-{
-   "remote": "gh",
-   "repository": "dave71670/device_e980",
-   "target_path": "device/lge/e980",
-   "revision": "cr-4"
- },
  {
    "remote": "gh",
    "repository": "dave71670/device_g_common",
    "target_path": "device/lge/gproj-common",
    "revision": "cm-13"
- },
- {
-   "remote": "gh",
-   "repository": "CyanogenMod/android_hardware_qcom_fm",
-   "target_path": "hardware/qcom/fm",
-   "revision": "cm-13.0"
  },
  {
    "remote": "gh",
