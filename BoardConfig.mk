@@ -35,7 +35,6 @@ BOARD_WLAN_DEVICE_REV            := bcm4334
 WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA          := "/system/etc/firmware/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_AP           := "/system/etc/firmware/fw_bcmdhd_apsta.bin"
-WIFI_DRIVER_FW_PATH_P2P          := "/system/etc/firmware/fw_bcmdhd_p2p.bin"
 WIFI_BAND                        := 802_11_ABG
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
@@ -43,46 +42,19 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_USE_CUSTOM_RECOVERY_FONT:= \"roboto_23x41.h\"
 TARGET_RECOVERY_FSTAB = device/lge/e980/fstab.geefhd
 ENABLE_LOKI_RECOVERY := true
+BOARD_RECOVERY_SWIPE := true
 
-COMMON_GLOBAL_CFLAGS += -DLG_CAMERA_HARDWARE
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2621440000 # 2500M. Actually 2560, but hold some in reserve
 
 -include vendor/lge/e980/BoardConfigVendor.mk
-
-BOARD_SEPOLICY_DIRS += \
-        device/lge/e980/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-	file_contexts \
-	property_contexts \
-	te_macros \
-	bluetooth_loader.te \
-	bridge.te \
-	camera.te \
-	conn_init.te \
-	device.te \
-	dhcp.te \
-	domain.te \
-	drmserver.te \
-	file.te \
-	kickstart.te \
-	init.te \
-	mediaserver.te \
-	mpdecision.te \
-	netmgrd.te \
-	property.te \
-	qmux.te \
-	rild.te \
-	rmt.te \
-	sensors.te \
-	surfaceflinger.te \
-	system.te \
-	tee.te \
-	thermald.te \
-	ueventd.te \
-	wpa_supplicant.te
 
 TARGET_OTA_ASSERT_DEVICE := e986,e980,geefhd,e988,gkatt
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/gproj-common/loki
 
+MALLOC_IMPL := dlmalloc
+
 COMMON_GLOBAL_CFLAGS += -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
+
+BOARD_SEPOLICY_DIRS += \
+        device/lge/e980/sepolicy
